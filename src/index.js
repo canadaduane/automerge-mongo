@@ -59,8 +59,9 @@ const openUri = _docUri => {
   handle.subscribe(newDoc => {
     const keys = Object.keys(newDoc);
     log("Change Event:", keys.length, "keys");
-    // document = newDoc;
     MongoClient.connect(MONGO_URL, (err, db) => {
+      // This is a terrible hack for now--just clobber the mongo
+      // database with changed key/values that map to mongo db docs
       keys.forEach(key => {
         const value = newDoc[key];
         const query = { _id: key };
