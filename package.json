@@ -1,0 +1,34 @@
+{
+  "name": "automerge-mongo",
+  "version": "1.0.0",
+  "description": "NATS-based sync between automerge CRDT documents and Mongo",
+  "main": "lib/index.js",
+  "repository": "http://github.com/canadaduane/automerge-mongo",
+  "author": "Duane Johnson",
+  "license": "MIT",
+  "scripts": {
+    "build": "babel src/ -d lib/",
+    "start": "yarn build && node lib/index.js"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.4.4",
+    "@babel/core": "^7.4.5",
+    "@babel/plugin-proposal-class-properties": "^7.4.4",
+    "@babel/plugin-transform-runtime": "^7.4.4",
+    "@babel/preset-env": "^7.4.5",
+    "babel-eslint": "^10.0.1",
+    "eslint": "^5.16.0"
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.4.5",
+    "automerge": "github:automerge/automerge#text-hack",
+    "bs58": "^4.0.1",
+    "dat-swarm-defaults": "^1.0.2",
+    "discovery-cloud-client": "^0.0.3",
+    "hypermerge": "github:canadaduane/hypermerge#fix-prototype",
+    "js-crc": "^0.2.0",
+    "mongodb": "^3.2.7",
+    "node-nats-streaming": "^0.2.2",
+    "random-access-memory": "^3.1.1"
+  }
+}
